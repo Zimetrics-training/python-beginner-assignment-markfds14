@@ -15,4 +15,12 @@ def count_char_occurrences(s, char):
     This function takes a string and a character and returns how many times the character appears in the string.
     """
     # Your code here
-    pass
+    
+    length=len(s)
+    count=0
+
+    for i in range(0,length):
+        if s[i] == char:
+            count+=1
+
+    return count

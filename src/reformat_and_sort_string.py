@@ -20,13 +20,16 @@ def reformat_and_sort(s: str) -> str:
     words = s.split()
 
     # Step 3: Reverse the order of the words
+    
     words.reverse()
 
     # Step 4: Capitalize the first letter of each word
     words = [word.capitalize() for word in words]
 
     # Step 5: Sort the words alphabetically
+
     words.sort()
 
     # Step 6: Join the words back into a string with spaces in between
+
     return " ".join(words)

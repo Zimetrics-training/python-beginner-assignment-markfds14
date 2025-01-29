@@ -24,25 +24,40 @@ import datetime
 class Book:
     def __init__(self, title: str, author: str, year_of_publication: int, status: str = "available"):
         # Initialize the book with title, author, year_of_publication, and status
-        pass
+        self.title=title
+        self.author=author
+        self.year_of_publication = year_of_publication
+        self.status=status
 
     def checkout(self) -> None:
         # Mark the book as checked out, raise an exception if already checked out
-        pass
+        if self.status == 'checked out':
+            raise Exception("This Book is already been checked out")
+        else:
+            self.status='checked out'
 
     def checkin(self) -> None:
         # Mark the book as available, raise an exception if already available
-        pass
+        if self.status == 'available':
+            raise Exception("This Book is already available")
+        else:
+            self.status = 'available'
 
     def get_info(self) -> str:
         # Return the book's title, author, year_of_publication, and status as a formatted string
-        pass
+        
+        return f'{self.title} by {self.author} (Published: {self.year_of_publication}) - {self.status}'
 
     def is_checked_out(self) -> bool:
         # Return True if the book is checked out, else False
-        pass
+
+        if self.status == 'checked out':
+            return True
+        else:
+            return False
 
     @staticmethod
     def book_age(year_of_publication: int) -> int:
         # Return the age of the book based on the current year
-        pass
+
+        return datetime.datetime.now().year - year_of_publication

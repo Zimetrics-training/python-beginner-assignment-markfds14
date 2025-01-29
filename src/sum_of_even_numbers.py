@@ -15,4 +15,11 @@ def sum_of_even_numbers(lst):
     This function takes a list of integers and returns the sum of all even numbers.
     """
     # Your code here
-    pass
+
+    sum=0
+    for num in lst:
+        
+        if num%2==0:
+            sum+=num
+
+    return sum
